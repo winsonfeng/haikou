@@ -68,10 +68,33 @@ main {
 
 .layui-card-header {
     height: 52px;
-    line-height: 50px;
+    line-height: 52px;
     padding: 0 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.layui-card-header span{
+}
+.layui-card-header span:before{
+    content: '';
+    display: inline-block;
+    height: 17px;
+    width: 4px;
+    background: #fcdb02;
+    vertical-align: middle;
+    margin-right: 12px;
+    position: relative;
+    top: -1px;
+}
+.layui-card-header button{
+    background: #fcdb02;
+    color: #4c4c4c;
+    font-weight: bolder;
+    height: 32px;
+    line-height: 32px;
 
+}
 .layui-card-body {
     padding: 24px 0;
 }
@@ -142,7 +165,9 @@ main {
     color: #4c4c4c;
     font-weight: bolder;
 }
-
+.layui-form.my .layui-btn:hover{
+    color: #4c4c4c;
+}
 .datecontain {
     display: flex;
     align-items: center;
