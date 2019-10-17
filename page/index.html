@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
     <title>海口报考</title>
     <link href="../css/layui.css" rel="stylesheet">
     <link href="../css/index.css" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png" type="image/x-icon"/>
     <style>
         .layui-table-body, .layui-table-box, .layui-table-cell {
             overflow: visible;
@@ -15,22 +17,25 @@
 <body>
 <header>
     <div class="header-nav">
-        <div class="img-contain">
-            <img alt="" src="../images/logo.png">
-        </div>
-        <div class="sign">
-            <div class="sign-in">
-                <a href="#">登录</a>
-            </div>
-            <div class="sign-up">
-                <a href="#">注册</a>
-            </div>
-        </div>
+<!--        <div class="img-contain">-->
+<!--            <img alt="" src="../images/logo.png">-->
+<!--        </div>-->
+        <!-- <div class="sign">
+             <div class="sign-in">
+                 <a href="#">登录</a>
+             </div>
+             <div class="sign-up">
+                 <a href="#">注册</a>
+             </div>
+         </div>-->
     </div>
 </header>
 <main>
     <div class="layui-card">
-        <div class="layui-card-header">报考信息</div>
+        <div class="layui-card-header">
+            <span>报考信息</span>
+            <button class="layui-btn">查询</button>
+        </div>
         <div class="layui-card-body">
             <form class="layui-form my" lay-filter="myform"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
                 <!--<div class="layui-form-item">
