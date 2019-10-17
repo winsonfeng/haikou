@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <title>海口报考</title>
+    <link href="../css/layui.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <style>
+        .layui-table-body, .layui-table-box, .layui-table-cell {
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-nav">
+        <div class="img-contain">
+            <img alt="" src="../images/logo.png">
+        </div>
+        <div class="sign">
+            <div class="sign-in">
+                <a href="#">登录</a>
+            </div>
+            <div class="sign-up">
+                <a href="#">注册</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="layui-card">
+        <div class="layui-card-header">报考信息</div>
+        <div class="layui-card-body">
+            <form class="layui-form my" lay-filter="myform"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+                <!--<div class="layui-form-item">
+                    <label class="layui-form-label">报考卡号</label>
+                    <div class="layui-input-block">
+                        <input autocomplete="off" class="layui-input" name="" placeholder="请输入" type="text">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">学校</label>
+                    <div class="layui-input-block">
+                        <input autocomplete="off" class="layui-input" name="" placeholder="请输入" type="text">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">考生类别</label>
+                    <div class="layui-input-block">
+                        <input autocomplete="off" class="layui-input" name="" placeholder="请输入" type="text">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">申请异地类型</label>
+                    <div class="layui-input-block">
+                        <input autocomplete="off" class="layui-input" name="" placeholder="请输入" type="text">
+                    </div>
+                </div>-->
+
+
+                <table class="layui-table mytable">
+                    <colgroup>
+                        <col width="120">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col>
+                        <col width="200">
+                    </colgroup>
+
+                    <tr>
+                        <th>考生姓名</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                        <th>考生身份证号</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                        <th>报考卡号</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>学校</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                        <th>考生类别</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                        <th>申请异地类型</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>考生户籍地</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                        <th>考生手机</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                        <th>家长手机</th>
+                        <td><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <!--表-->
+                    <tr class="table-header">
+                        <th>就读年级</th>
+                        <th>就读时间</th>
+                        <th>就读学校</th>
+                        <th>就读班级</th>
+                        <th>证明人</th>
+                        <th>辖区教育局</th>
+                    </tr>
+                    <tr>
+                        <th>一年级</th>
+                        <td>
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="" placeholder="200809" type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="" placeholder="200906" type="text">
+                            </div>
+                        </td>
+                        <td>
+                            <select lay-search="" lay-verify=" " name="modules">
+                                <option selected="" value="">直接选择或搜索选择</option>
+                                <option value="0">海口市滨海九小</option>
+                                <option value="1">海口市龙华小学</option>
+                                <option value="2">游戏</option>
+                                <option value="3">音乐</option>
+                                <option value="4">旅行</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input autocomplete="" class="layui-input" lay-verify="0" name="" placeholder="请输入" type="text">
+                        </td>
+                        <td>
+                            <input autocomplete="" class="layui-input" lay-verify=" " name="" placeholder="请输入" type="text">
+                        </td>
+                        <td>
+                            <select lay-search="" lay-verify=" " name="modules">
+                                <option selected="" value="">直接选择或搜索选择</option>
+                                <option value="0">海南省教育厅</option>
+                                <option value="1">海口市教育局</option>
+                                <option value="2">美兰区教育局</option>
+                                <option value="3">龙华区教育局</option>
+                                <option value="4">琼山区教育局</option>
+                                <option value="5">秀英区教育局</option>
+                                <option value="6">其他</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>二年级</th>
+                        <td>
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify=" " placeholder="200809"
+                                       type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify=" " placeholder="200906"
+                                       type="text">
+                            </div>
+                        </td>
+                        <td>
+                            <select lay-search="" lay-verify=" " name="modules">
+                                <option selected="" value="">直接选择或搜索选择</option>
+                                <option value="0">海口市滨海九小</option>
+                                <option value="1">海口市龙华小学</option>
+                                <option value="2">游戏</option>
+                                <option value="3">音乐</option>
+                                <option value="4">旅行</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input autocomplete="" class="layui-input" lay-verify=" " name="" placeholder="请输入"
+                                   type="text">
+                        </td>
+                        <td>
+                            <input autocomplete="" class="layui-input" lay-verify=" " name="" placeholder="请输入"
+                                   type="text">
+                        </td>
+                        <td>
+                            <select lay-search="" lay-verify=" " name="modules">
+                                <option selected="" value="">直接选择或搜索选择</option>
+                                <option value="0">海南省教育厅</option>
+                                <option value="1">海口市教育局</option>
+                                <option value="2">美兰区教育局</option>
+                                <option value="3">龙华区教育局</option>
+                                <option value="4">琼山区教育局</option>
+                                <option value="5">秀英区教育局</option>
+                                <option value="6">其他</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--法定监护人户籍所在地-->
+                    <tr>
+                        <th>监护人户籍所在地</th>
+                        <td colspan="2"><input class="layui-input layui-input-inline" placeholder="广东省汕头市XX派出所"
+                                               type="text"></td>
+                        <th>现工作单位</th>
+                        <td colspan="2"><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">法定监护人
+                            在琼缴纳社保情况
+                            （医疗保险及养老保险两项）
+                        </th>
+                        <th>缴纳市县</th>
+                        <th colspan="1.5">养老保险缴纳起止时间</th>
+                        <th colspan="1.5">医疗保险缴纳起止时间</th>
+                        <th colspan="2">缴纳社保年限（截止2019年12月前购买）</th>
+                    </tr>
+                    <tr>
+                        <td colspan=""><input class="layui-input layui-input-inline" placeholder="海口市" type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="" placeholder="200901"
+                                       type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="" placeholder="200901"
+                                       type="text">
+                            </div>
+                        </td>
+                        <td colspan="2"><input class="layui-input layui-input-inline" placeholder="9年1个月" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=""><input class="layui-input layui-input-inline" type="text"></td>
+                        <td colspan=""><input class="layui-input layui-input-inline" type="text"></td>
+                        <td colspan=""><input class="layui-input layui-input-inline" type="text"></td>
+                        <td colspan="2"><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=""><input class="layui-input layui-input-inline" type="text"></td>
+                        <td colspan=""><input class="layui-input layui-input-inline" type="text"></td>
+                        <td colspan=""><input class="layui-input layui-input-inline" type="text"></td>
+                        <td colspan="2"><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <!--监护人户籍所在地-->
+                    <tr>
+                        <th>监护人户籍所在地</th>
+                        <td colspan="2"><input class="layui-input layui-input-inline" placeholder="广东省汕头市XX派出所"
+                                               type="text"></td>
+                        <th>现工作单位</th>
+                        <td colspan="2"><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">法定监护人
+                            在琼缴纳社保情况
+                            （医疗保险及养老保险两项）
+                        </th>
+                        <td>缴纳市县</td>
+                        <td colspan="1.5">养老保险缴纳起止时间</td>
+                        <td colspan="1.5">医疗保险缴纳起止时间</td>
+                        <td colspan="2">缴纳社保年限（截止2019年12月前购买）</td>
+                    </tr>
+                    <tr>
+                        <td colspan=""><input class="layui-input layui-input-inline" placeholder="海口市" type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="2"><input class="layui-input layui-input-inline" placeholder="9年1个月" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=""><input class="layui-input layui-input-inline" placeholder="" type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="2"><input class="layui-input layui-input-inline" placeholder="" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=""><input class="layui-input layui-input-inline" placeholder="" type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td colspan="2"><input class="layui-input layui-input-inline" placeholder="" type="text">
+                        </td>
+                    </tr>
+                    <!--考生及法定监护人在琼居住情况-->
+                    <tr>
+                        <th rowspan="4">考生及法定监护人在琼居住情况</th>
+                        <th colspan="2">在琼居住地址</th>
+                        <th colspan="1.5">居住起止时间</th>
+                        <th colspan="1.5">居住年限</th>
+
+                        <th colspan="">辖区派出所</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="layui-input layui-input-inline"
+                                               placeholder="海口市美兰区海甸三西路16号市政花园小区A栋1单元501房"
+                                               type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder="200901"
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td><input class="layui-input layui-input-inline" placeholder="10年5个月" type="text"></td>
+                        <td><input class="layui-input layui-input-inline" placeholder="海口市美兰区人民路
+派出所" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="layui-input layui-input-inline"
+                                               placeholder=""
+                                               type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td><input class="layui-input layui-input-inline" placeholder="" type="text"></td>
+
+                        <td><input class="layui-input layui-input-inline" placeholder="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="layui-input layui-input-inline"
+                                               placeholder=""
+                                               type="text"></td>
+                        <td colspan="">
+                            <div class="datecontain">
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                                <span>-</span>
+                                <input class="layui-input layui-input-inline" lay-verify="myDate" placeholder=""
+                                       required type="text">
+                            </div>
+                        </td>
+                        <td><input class="layui-input layui-input-inline" placeholder="" type="text"></td>
+
+                        <td><input class="layui-input layui-input-inline" placeholder="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="1">其他说明事项</th>
+                        <td colspan="5"><input class="layui-input layui-input-inline" type="text"></td>
+                    </tr>
+                </table>
+                <div class="submit">
+                    <button class="layui-btn" lay-filter="*" lay-submit>保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="../layui.all.js"></script>
+
+<script>
+    //JavaScript代码区域
+    layui.use(['form', 'jquery', 'laydate', 'layedit', 'table'], function () {
+        var element = layui.element;
+        var form = layui.form;
+        var table = layui.table;
+        var laydate = layui.laydate;
+        var layedit = layui.layedit;
+        var layer = layui.layer;
+        var editIndex = layedit.build('LAY_demo_editor');
+        var $ = layui.$;
+
+        form.verify({
+            /*自定义日期验证*/
+            myDate: function (value) {
+                if (value.length > 6) {
+                    return '请输入正确日期格式'
+                } else if ("201912" - value < 0) {
+                    return '填报的截止期限最远为2019年12月';
+                }
+            }
+
+        });
+//年月范围
+        laydate.render({
+            elem: '.laydate'
+            , type: 'month'
+            , range: true
+        });
+
+    });
+
+</script>
+<script>
+</script>
+</body>
+</html>
