@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+    <title>${title!'海口市异地考生预报名-上传附件'}</title>
+    <link rel="stylesheet" href="../css/layui.css"/>
+    <link rel="stylesheet" href="../css/signUp.css"/>
+    <link href="../images/favicon.ico" rel="icon">
+    <style>
+
+    </style>
+</head>
+<body class="noAdmin">
+<header>
+    <div class="header-nav">
+        <div class="img-contain">
+            <!--            <img alt="" src="../images/logo.png">-->
+        </div>
+        <div class="sign">
+            <div class="sign-in layui-hide">
+                <a href="${ctxPath}/signUp/login">登录</a>
+            </div>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><cite id="studentName"></cite>
+                        <span class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a id="modifyPassword">修改密码</a></dd>
+                        <dd><a href="${ctxPath}/signUp/logout">注销</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="layui-form my" id="viewImg" lay-filter="studentForm" style="padding: 0">
+        <input type="hidden" name="id" id="id">
+        <input type="hidden" name="password" id="password">
+        <!-- 重要附件上传-->
+        <div class="layui-card">
+            <div class="layui-card-header upload-header">
+                <span>重要附件上传</span>
+                <div class="layui-card-header-button" id="goBack">
+                    <a class="layui-btn icon-btn"><i class="layui-icon">&#xe603;</i>返回
+                    </a>
+                </div>
+            </div>
+            <div class="layui-card-body">
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span><label class="layui-form-must">*</label>《2020年海口市“异地高考”及“本省户口按异地高考”考生报名资格审查表》</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload preview-img">
+                                <img src="" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value=""
+                                       data-code="">
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="upload  select-img" id="examAudit"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span><label class="layui-form-must">*</label>《2020年海南省普通高考报名材料清单及诚信承诺书》</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload preview-img">
+                                <img src="" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value=""
+                                       data-code="">
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="upload  select-img" id="examCommitment"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span><label class="layui-form-must">*</label>《2020年海南省普通高考异地高考考生报考登记表》</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}"
+                                       data-code="${file.type}">
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="upload  select-img" id="examRegistrationForm"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span><label class="layui-form-must">*</label>《2020年海口市高考报名户籍材料审查单》</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            @for(file in files){
+                            @if(file.type == 400){
+                            <div class="upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}"
+                                       data-code="${file.type}">
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            @}
+                            @}
+                            <div class="upload  select-img" id="examReviewForm"></div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <!-- 户籍材料附件上传-->
+        <!--<div class="layui-card">
+            <div class="layui-card-header upload-header">
+                <span>户籍材料附件上传</span>
+            </div>
+            <div class="layui-card-body">
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span>考生本人的居民户口簿首页及内页复印件</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>考生本人的居民户口簿首页页页</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examAccountBookHome?'layui-hide'}"
+                                 id="examAccountBookHome">
+                                <span>考生本人的居民户口簿首页</span>
+                            </div>
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>考生本人的居民户口簿内页</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examAccountBookUser?'layui-hide'}"
+                                 id="examAccountBookUser">
+                                <span>考生本人的居民户口簿内页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span>法定监护人的居民户口簿首页及内页复印件</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>法定监护人的居民户口簿首页</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examGuardianAccountBookHome?'layui-hide'}"
+                                 id="examGuardianAccountBookHome">
+                                <span>法定监护人的居民户口簿首页</span>
+                            </div>
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>法定监护人的居民户口簿内页</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img select-img ${examGuardianAccountBookUser?'layui-hide'}"
+                                 id="examGuardianAccountBookUser">
+                                <span>法定监护人的居民户口簿内页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span>考生本人的居民身份证正反面复印件</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>法定监护人的居民户口簿内页</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examIdCardFront?'layui-hide'}" id="examIdCardFront">
+                                <span>考生本人的居民身份证正面</span>
+                            </div>
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>考生本人的居民身份证反面</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examIdCardBack?'layui-hide'}" id="examIdCardBack">
+                                <span>考生本人的居民身份证反面</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span>法定监护人的居民身份证正反面复印件</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>法定监护人的居民身份证正面</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examGuardianIdCardFront?'layui-hide'}"
+                                 id="examGuardianIdCardFront">
+                                <span>法定监护人的居民身份证正面</span>
+                            </div>
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <span>法定监护人的居民身份证反面</span>
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+                            <div class="id_upload  select-img ${examGuardianIdCardBack?'layui-hide'}"
+                                 id="examGuardianIdCardBack">
+                                <span>法定监护人的居民身份证反面</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--            <div class="submit">-->
+        <!-- 其他户籍材料附件上传-->
+        <div class="layui-card">
+            <div class="layui-card-header upload-header">
+                <span>其他户籍材料附件上传</span>
+            </div>
+            <div class="layui-card-body">
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title" style="width: auto">
+                        <span>其他户籍材料：与法定监护人不在同一户口簿的考生可提供出生证，或户籍地常住人口信息登记表。</span>
+                    </div>
+                    <div class="upload-note">
+                        <span>考生根据个人情况自愿提供，也可以提供其他相关的有效证件和材料，所提供材料要求真实、有效、完整，需要单位出具的材料要盖章，方便有关部门做资格审查</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="upload-contain">
+                            <div class="upload id_upload preview-img">
+                                <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                       value="${file.description}">
+                                <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                       data-description="${file.description}">
+                                <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                    <i class="layui-icon layui-icon-close"></i>
+                                </button>
+                            </div>
+
+                            <div class="id_upload  select-img" id="examCensusFile">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 其他户籍材料附件上传-->
+        <div class="layui-card">
+            <div class="layui-card-header upload-header">
+                <span>考生根据自身符合的报考条件类别，提交本人在我省就读情况及法定监护人在我省工作、居住的有关材料</span>
+            </div>
+            <div class="layui-card-body">
+                <!--就读附件-->
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title">
+                        <span>就读情况</span>
+                    </div>
+                    <div class="upload-note">
+                        <p>就读情况可提供本人小学或初中阶段<strong>在我省就读的毕业证书（比较重要）</strong>、<strong>欣科学籍表（比较重要）</strong>、成绩单、报告手册、、学费缴费单、生活照、保险单等。
+                        </p>
+                        <span>考生根据个人情况自愿提供，也可以提供其他相关的有效证件和材料，所提供材料要求真实、有效、完整，需要单位出具的材料要盖章，方便有关部门做资格审查</span>
+                    </div>
+                    <div class="upload-step">小学阶段</div>
+                    <div class="layui-card-body-content">
+                        <div class="layui-tab layui-tab-card">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this"><strong>小学毕业证复印件</strong></li>
+                                <li><strong>毕业照</strong></li>
+                                <li>成绩单</li>
+                                <li>报告手册</li>
+                                <li>欣科学籍表</li>
+                                <li>学费缴费单</li>
+                                <li>保险单</li>
+                                <li>其他</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <div class="upload-contain">
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="id_upload  select-img" id="examStudySituation11111">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">2</div>
+                        <div class="layui-tab-item">3</div>
+                        <div class="layui-tab-item">4</div>
+                        <div class="layui-tab-item">5</div>
+                        <div class="layui-tab-item">6</div>
+                    </div>
+                    <div class="upload-step">初中阶段</div>
+                    <div class="layui-card-body-content">
+                        <div class="layui-tab layui-tab-card">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this"><strong>初中阶段</strong></li>
+                                <li><strong>毕业照</strong></li>
+                                <li>成绩单</li>
+                                <li>报告手册</li>
+                                <li>欣科学籍表</li>
+                                <li>学费缴费单</li>
+                                <li>保险单</li>
+                                <li>其他</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <div class="upload-contain">
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="id_upload  select-img" id="examStudySituation">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">2</div>
+                        <div class="layui-tab-item">3</div>
+                        <div class="layui-tab-item">4</div>
+                        <div class="layui-tab-item">5</div>
+                        <div class="layui-tab-item">6</div>
+                    </div>
+                </div>
+                <!--<div class="upload-contain">
+                    <div class="upload id_upload preview-img">
+                        <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                        <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                               value="${file.description}">
+                        <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                               data-description="${file.description}">
+                        <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                            <i class="layui-icon layui-icon-close"></i>
+                        </button>
+                    </div>
+                    <div class="id_upload  select-img" id="examStudySituation">
+                    </div>
+                </div>-->
+
+                <!--居住从业情况-->
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title" style="width: auto">
+                        <span>* 居住从业情况</span>
+                    </div>
+                    <div class="upload-note">
+                        <p>居住情况可提供<strong>《居住证》（比较重要）</strong>、<strong>《暂住证》（比较重要）</strong>、
+                            流动人口信息登记表、《房产证》、房屋租赁证和租房合同等有效证件、材料。
+                            对于不能提供《居住证》、《暂住证》的，或所提交的《居住证》、《暂住证》未涵盖的年份，要提交
+                            <strong>《2020年海南省普通高考异地考生及法定监护人居住情况
+                                审查登记表》（比较重要）</strong></p>
+                        <span>考生根据个人情况自愿提供，也可以提供其他相关的有效证件和材料，所提供材料要求真实、有效、完整，
+                            需要单位出具的材料要盖章，方便有关部门做资格审查</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="layui-tab layui-tab-card">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this"><strong>海南省普通高考异地考生及法定监护人居住情况审查登记表</strong></li>
+                                <li><strong>居住证复印件（请备注年份）</strong></li>
+                                <li><strong>暂住证复印件（请备注年份）</strong></li>
+                                <li>流动人口信息登记表</li>
+                                <li>房屋租赁证</li>
+                                <li>租房合同</li>
+                                <li>劳动合同</li>
+                                <li>营业执照</li>
+                                <li>其他</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <div class="upload-contain">
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="id_upload  select-img" id="examStudySituation2222">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">2</div>
+                        <div class="layui-tab-item">3</div>
+                        <div class="layui-tab-item">4</div>
+                        <div class="layui-tab-item">5</div>
+                        <div class="layui-tab-item">6</div>
+                    </div>
+                </div>
+
+                <!--缴纳社保-->
+                <div class="layui-card-container">
+                    <div class="layui-card-body-title" style="width: auto">
+                        <span>缴纳社保</span>
+                    </div>
+                    <div class="upload-note">
+                        <p>缴纳社保情况可提供社保卡复印件，或<strong>社保缴费清单（对省直或外市县参保考生比较重要）</strong>。</p>
+                        <span>考生根据个人情况自愿提供，也可以提供其他相关的有效证件和材料，所提供材料要求真实、有效、完整，
+                            需要单位出具的材料要盖章，方便有关部门做资格审查</span>
+                    </div>
+                    <div class="layui-card-body-content">
+                        <div class="layui-tab layui-tab-card">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this"><strong>社保缴费清单</strong></li>
+                                <li>社保卡复印件</li>
+                                <li>其他</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <div class="upload-contain">
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="upload id_upload preview-img">
+                                            <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                                            <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                                                   value="${file.description}">
+                                            <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                                                   data-description="${file.description}">
+                                            <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                                                <i class="layui-icon layui-icon-close"></i>
+                                            </button>
+                                        </div>
+                                        <div class="id_upload  select-img" id="examStudySituation3333">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">2</div>
+                        <div class="layui-tab-item">3</div>
+                        <div class="layui-tab-item">4</div>
+                        <div class="layui-tab-item">5</div>
+                        <div class="layui-tab-item">6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- <div class="layui-card-container">
+            <div class="layui-card-body-title" style="width: auto">
+                <span>缴纳社保</span>
+            </div>
+            <div class="layui-card-body-content">
+                <div class="upload-contain">
+                    <div class="upload id_upload preview-img">
+                        <img src="${ctxPath}/uploadfile/signUp/${file.fileName}" class="layui-upload-img">
+                        <input class="layui-input onInput" required lay-verify="required" placeholder="请添加备注"
+                               value="${file.description}">
+                        <input type="hidden" class="img-input" value="${file.fileName}" data-code="${file.type}"
+                               data-description="${file.description}">
+                        <button class="layui-btn layui-btn-sm layui-btn-radius delete-img">
+                            <i class="layui-icon layui-icon-close"></i>
+                        </button>
+                    </div>
+                    <div class="id_upload select-img" id="examSocialSecurity">
+                    </div>
+                </div>
+                <div class="upload-note">
+                    <p>缴纳社保情况可提供社保卡复印件，或<strong>社保缴费清单（对省直或外市县参保考生比较重要）</strong>。</p>
+                    <span>考生根据个人情况自愿提供，也可以提供其他相关的有效证件和材料，所提供材料要求真实、有效、完整，需要单位出具的材料要盖章，方便有关部门做资格审查</span>
+                </div>
+            </div>
+        </div>-->
+
+    </div>
+    <div class="submit layui-hide">
+        <button class="layui-btn" lay-filter="saveAttachment" lay-submit>保存</button>
+        <button class="layui-btn" lay-filter="submit" lay-submit>提交</button>
+    </div>
+    </div>
+
+    </div>
+    <div id="outerdiv"
+         style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
+        <div id="innerdiv" style="position:absolute;">
+            <img id="bigimg" style="border:5px solid #fff;" src=""/>
+        </div>
+    </div>
+</main>
+<script type="text/javascript">
+    var Feng = {
+        ctxPath: "",
+        addCtx: function (ctx) {
+            if (this.ctxPath === "") {
+                this.ctxPath = ctx;
+            }
+        }
+    };
+    Feng.addCtx("${ctxPath}");
+
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--<script type="text/javascript" src="${ctxPath}/assets/expand/plugins/jquery/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="${ctxPath}/assets/common/libs/jquery/jquery.md5.js"></script>-->
+<script type="text/javascript" src="../layui.all.js"></script>
+<script type="text/javascript" src="../signUp.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/common/js/common.js"></script>
+<script>
+    layui.use('element', function () {
+        var $ = layui.jquery
+            , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    }
+
+    var auditor = "${auditor}";
+    var Student = {
+        isAuditor: true
+    }
+    if (auditor === 'true') {
+        $(".submit").removeClass("layui-hide");
+
+    } else {
+        Student.isAuditor = false;
+    }
+
+
+    layui.use('element', function () {
+        var element = layui.element;
+
+        //…
+    });
+
+    function imgShow(outerdiv, innerdiv, bigimg, _this) {
+        var src = _this.attr("src");//获取当前点击的pimg元素中的src属性
+        $(bigimg).attr("src", src);//设置#bigimg元素的src属性
+
+        /*获取当前点击图片的真实大小，并显示弹出层及大图*/
+        $("<img/>").attr("src", src).load(function () {
+            var windowW = $(window).width();//获取当前窗口宽度
+            var windowH = $(window).height();//获取当前窗口高度
+            var realWidth = this.width;//获取图片真实宽度
+            var realHeight = this.height;//获取图片真实高度
+            var imgWidth, imgHeight;
+            var scale = 0.8;//缩放尺寸，当图片真实宽度和高度大于窗口宽度和高度时进行缩放
+
+            if (realHeight > windowH * scale) {//判断图片高度
+                imgHeight = windowH * scale;//如大于窗口高度，图片高度进行缩放
+                imgWidth = imgHeight / realHeight * realWidth;//等比例缩放宽度
+                if (imgWidth > windowW * scale) {//如宽度扔大于窗口宽度
+                    imgWidth = windowW * scale;//再对宽度进行缩放
+                }
+            } else if (realWidth > windowW * scale) {//如图片高度合适，判断图片宽度
+                imgWidth = windowW * scale;//如大于窗口宽度，图片宽度进行缩放
+                imgHeight = imgWidth / realWidth * realHeight;//等比例缩放高度
+            } else {//如果图片真实高度和宽度都符合要求，高宽不变
+                imgWidth = realWidth;
+                imgHeight = realHeight;
+            }
+            $(bigimg).css("width", imgWidth);//以最终的宽度对图片缩放
+
+            var w = (windowW - imgWidth) / 2;//计算图片与窗口左边距
+            var h = (windowH - imgHeight) / 2;//计算图片与窗口上边距
+            $(innerdiv).css({"top": h, "left": w});//设置#innerdiv的top和left属性
+            $(outerdiv).fadeIn("fast");//淡入显示#outerdiv及.pimg
+        });
+
+        $(outerdiv).click(function () {//再次点击淡出消失弹出层
+            $(this).fadeOut("fast");
+        });
+    }
+
+    $(document).on('click', '.layui-upload-img', function () {
+        imgShow("#outerdiv", "#innerdiv", "#bigimg", $(this));
+    })
+    $("#goBack").on('click', function () {
+        if (Student.isAuditor) {
+            window.location.href = Feng.ctxPath + "/student/" + Feng.getPathnameId();
+        } else {
+            window.location.href = Feng.ctxPath + "/signUp";
+        }
+    })
+</script>
+
+</body>
+</html>

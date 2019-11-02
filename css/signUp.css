@@ -1,0 +1,545 @@
+/*layer.msg*/
+body .public-class {
+    min-width: 180px;
+    border: 1px solid #f5f6fa;
+    /* box-shadow:none; */
+    box-shadow: 2px 2px 20px 0px rgba(110, 143, 163, 0.1);
+}
+
+body .public-class-msg {
+    border-radius: 12px;
+}
+
+body .public-class .layui-layer-padding {
+    padding: 20px 20px 20px 64px;
+}
+
+body .public-class .layui-layer-content .layui-layer-ico {
+    left: 20px;
+}
+
+.layui-layer-msg {
+    min-width: 180px;
+    border: 1px solid #f5f6fa;
+    /* box-shadow:none; */
+    border-radius: 12px;
+    box-shadow: 2px 2px 20px 0px rgba(110, 143, 163, 0.1);
+}
+
+body {
+    background: #f5f6fa;
+}
+
+header {
+    width: 100%;
+    height: 500px;
+    /*position: absolute;*/
+    top: 0;
+    background: #e2e2e2;
+    background: url("../images/bg.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.no-border {
+    border-width: 0 !important;
+}
+
+header .header-nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+header .img-contain {
+    width: 44px;
+    padding-left: 10px;
+}
+
+header .img-contain img {
+    width: 100%;
+}
+
+header .sign {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .sign div {
+    margin-right: 12px;
+}
+
+header .sign a {
+    border-radius: 24px;
+    padding: 8px 24px;
+
+}
+
+header .sign-in a {
+    color: #1a1a1a;
+    background: #fcdb02;
+    font-weight: bolder;
+}
+
+header .sign-up a {
+    color: #1a1a1a;
+    border: 1px solid #fcdb02;
+}
+
+main {
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    top: -52px;
+    padding: 0 2%;
+    padding-bottom: 100px;
+}
+
+.layui-card {
+    width: 100%;
+}
+
+.layui-card-header {
+    height: auto;
+    line-height: 52px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.layui-card-header span {
+    margin-left: 24px;
+}
+
+.layui-card-header .layui-card-header-button {
+    margin-right: 24px;
+}
+
+.layui-card-header span:before, .layui-card-body-title span:before {
+    content: '';
+    display: inline-block;
+    height: 17px;
+    width: 4px;
+    background: #fcdb02;
+    vertical-align: middle;
+    margin-right: 12px;
+    position: relative;
+    top: -1px;
+}
+
+
+.layui-card-header button {
+    background: #fcdb02;
+    color: #4c4c4c;
+    font-weight: bolder;
+    height: 32px;
+    line-height: 32px;
+
+}
+
+.layui-card-header.upload-header span {
+    /*padding: 0 23px;*/
+}
+
+.layui-card-body {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    padding: 12px 0;
+}
+
+.layui-card-body .layui-card-container {
+    margin-right: 50px;
+}
+
+.layui-form.my {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+
+.layui-form.my .layui-form-item {
+    flex-basis: 480px;
+    margin-right: 20px;
+}
+
+.layui-form-label {
+    width: 100px;
+    display: inline-block;
+}
+
+.layui-input-block {
+    display: inline-block;
+    margin: 0;
+    /*width: calc(100% - 150px);*/
+    min-width: 320px;
+}
+
+.submit {
+    width: 100%;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.submit button {
+    width: 20%
+}
+
+.mytable {
+    text-align: center;
+}
+
+.mytable .table-header {
+    background: #f7f7f7;
+}
+
+.mytable th {
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.mytable input {
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.layui-form.my .layui-form-select dl dd.layui-this {
+    background: #fcdb02;
+    color: #4c4c4c;
+    font-weight: bolder;
+}
+
+.layui-form.my .layui-btn {
+    background: #fcdb02;
+    color: #4c4c4c;
+    font-weight: bolder;
+}
+
+.layui-btn-save {
+    background: #1E9FFF !important;
+    color: white !important;
+    font-weight: bolder;
+}
+
+.layui-form.my .layui-btn:hover {
+    color: #4c4c4c;
+}
+
+.datecontain {
+    display: flex;
+    align-items: center;
+}
+
+.datecontain span {
+    padding: 0 4px;
+}
+
+.guardianTwo {
+    display: none;
+}
+
+.layui-card-body {
+    width: 100%;
+
+}
+
+.layui-card-body-title {
+    width: 480px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 14px;
+    padding-left: 23px;
+}
+
+.layui-card-body-content {
+    /*border-bottom: 1px solid #f5f6fa;*/
+    padding: 10px 0 36px 24px;
+    /*margin-bottom: 24px;*/
+}
+
+.layui-card-body-content:last-child {
+    border-bottom: 0;
+    margin-bottom: 12px;
+    padding: 10px 0 10px 23px;
+}
+
+.layui-card-body-content .upload-contain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.layui-card-body-content .upload-contain .upload {
+    /*background: #ebf1f4;*/
+    background: #fff url("../images/upload.png");
+    background-size: cover;
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.layui-card-body-content .upload-contain .id_upload {
+    background: #fff url("../images/upload.png");
+    background-size: cover;
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 42px;
+    margin-right: 24px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.layui-card-body-content .upload-contain .id_upload span {
+    bottom: -54px;
+    display: block;
+    width: 100%;
+    position: absolute;
+    color: #4c4c4c;
+    left: 0;
+}
+
+.upload-note {
+    background: #f5f6fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 8px 0 24px 23px;
+}
+
+.upload-note p {
+    color: #4c4c4c;
+}
+
+.upload-note span {
+    display: block;
+    color: #d67777;
+}
+
+strong {
+    color: #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.layui-card-body-content .upload-contain .id_upload .layui-input {
+    bottom: -46px;
+    position: absolute;
+    color: #4c4c4c;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.layui-card-body-content .upload-contain .id_upload .layui-input:focus {
+    border: 1px solid #f5f6fa;
+}
+
+.layui-upload-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.upload, .id_upload {
+    cursor: pointer;
+}
+
+
+.upload .layui-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.upload .layui-btn-sm {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.upload .layui-btn i {
+    margin-right: 0;
+}
+
+#inputPassword .layui-btn, #layui-layer1 .layui-btn {
+    background: #fcdb02 !important;
+    color: #1a1a1a;
+    width: 100%;
+}
+
+#inputPassword s.layui-btn:hover {
+    color: #1a1a1a;
+}
+
+#inputPassword {
+    padding: 4%;
+}
+
+.layui-nav {
+    background: rgba(0, 0, 0, 0);
+    padding: 0;
+    color: #1a1a1a;
+}
+
+.layui-nav .layui-nav-item a {
+    color: #1a1a1a;
+}
+
+.layui-nav .layui-nav-item a:hover {
+    color: #1a1a1a;
+    border-radius: 0;
+}
+
+.layui-nav a {
+    padding: 0;
+    color: #1a1a1a;
+}
+
+.layui-nav-bar {
+    background: #fcdb02;
+}
+
+.layui-nav-more {
+    border-top-color: #fcdb02 !important;
+}
+
+.layui-nav-mored {
+    border-color: #fcdb02 transparent transparent !important;
+
+    border-top-color: rgba(0, 0, 0, 0) !important;
+}
+
+.layui-laydate .layui-this {
+    background-color: #fcdb02 !important;
+    color: #1a1a1a !important;
+}
+
+.layui-laydate-footer span:hover {
+    color: #fcdb02 !important;
+}
+
+.laydate-theme-molv .layui-laydate-header i, .laydate-theme-molv .layui-laydate-header span {
+    color: #4c4c4c !important;
+}
+
+.layui-laydate-header span:hover {
+    color: #fcdb02 !important;
+}
+
+.layui-table-body, .layui-table-box, .layui-table-cell {
+    overflow: visible;
+}
+
+.layui-card-header button:hover {
+    color: #1a1a1a;
+}
+
+.searchSchool dd, .searchEducationBureau dd {
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.searchSchool dd:hover, .searchEducationBureau dd:hover {
+    background-color: #f2f2f2;
+}
+
+#selectSchool, #selectEducationBureau {
+    margin: 28px;
+    background-color: white;
+}
+
+#selectSchool .layui-inline-block, #selectEducationBureau .layui-inline-block {
+    position: relative;
+}
+
+#selectSchool .layui-input, #selectEducationBureau .layui-input {
+    padding-left: 16px;
+}
+
+#selectSchool .search, #selectEducationBureau .search {
+    width: 20%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fcdb02;
+    color: #1a1a1a
+}
+
+.layui-form-must {
+    color: red;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.layui-tab-card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .04);
+}
+.layui-tab-bar{
+    border-color: #f5f6fa;
+}
+.layui-tab-card > .layui-tab-title {
+    background-color: #fff;
+}
+
+.layui-tab-card > .layui-tab-more .layui-this {
+    color: #FD482C;
+}
+
+.layui-tab-title {
+    height: auto;
+    border-bottom: 0;
+}
+
+.layui-tab-title li {
+    color: #6b6b6b;
+    border-right: 1px solid #f5f6fa;
+    padding: 24px;
+    line-height: normal;
+    border-bottom: 1px solid #f5f6fa;
+    transition: 0.3s all ease-in-out;
+
+}
+
+.layui-tab-card > .layui-tab-title .layui-this {
+    color: #FD482C;
+    border-bottom-color: #fff;
+}
+
+.layui-tab-card > .layui-tab-title .layui-this strong {
+    color: #FD482C;
+    border-color: #FD482C;
+
+}
+
+
+.layui-tab-card > .layui-tab-title .layui-this:after {
+    display: none;
+}
+
+.layui-tab-card, .layui-tab-title {
+    border-color: #f5f6fa;
+}
+
+.layui-tab-content {
+    padding: 24px;
+}
+
+.upload-step {
+    display: inline-block;
+    padding: 6px 24px;
+    background-color: #fcdb02;
+    color: #1a1a1a;
+    margin: 0 24px 10px;
+    border-radius: 50px;
+}
